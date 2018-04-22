@@ -23,12 +23,12 @@ public class PartitionAlgorithm {
         }
         //Reduce array slice from top if correct index exists below
         if(pos > median_index){
-            System.out.println(pos + " compares to > " + median_index);
+            //System.out.println(pos + " compares to > " + median_index);
             return Select(array, min, median_index, pos-1);
         }
         //Reduce array slice from bottom if correct index exists above
         if(pos < median_index){
-            System.out.println(pos + " compares to <" + median_index);
+            //System.out.println(pos + " compares to <" + median_index);
             return Select(array, pos+1, median_index, max);
         }
         return 0;
