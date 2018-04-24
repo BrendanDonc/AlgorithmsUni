@@ -16,10 +16,13 @@ public class MainExecution {
 	private static int interval = 10;
 	
 	//Set highest possible value
-	private static int maxNum = 100;
+	private static int maxNum = 1000000000;
 	
 	//Set lowest possible value, must be less than maxNum
-	private static int minNum = -100;
+	private static int minNum = -1000000000;
+	
+	//Set filename of file to be created when run
+	private static String filename = "Average.xls";
 
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -77,7 +80,7 @@ public class MainExecution {
         	currentRun++;
     	}
     	
-    	try (PrintWriter averageOut = new PrintWriter("Average.xls")) {
+    	try (PrintWriter averageOut = new PrintWriter(filename)) {
     		averageOut.println("Size\tAverage brute time taken\tAverage partition time taken");
     		for(int i = 0; i < outputSize.length; i++) {
         		averageOut.println(outputSize[i] + "\t" + bruteOutput[i] + "\t" + partitionOutput[i]);
