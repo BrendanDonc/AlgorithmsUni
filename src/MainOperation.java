@@ -7,19 +7,19 @@ import Assignment.*;
 public class MainOperation {
 	
 	//Set amount of runs to average
-	private static int runs = 10000;
+	private static int runs = 100;
 	
 	//Set max size of Array
 	private static int maxSize = 1000;
 	
 	//Set interval of Array sizes for each run
-	private static int interval = 10;
-	
+	private static int interval = 100;
+
 	//Set highest possible value
-	private static int maxNum = 1000000000;
-	
+	private static int maxNum = 10000;
+
 	//Set lowest possible value, must be less than maxNum
-	private static int minNum = -100000000;
+	private static int minNum = -10000;
 	
 	//Set filename of file to be created when run
 	private static String filename = "Operations.xls";
@@ -29,6 +29,7 @@ public class MainOperation {
 		
 		//Initialize global variables
 		String[] bruteOutput = new String[(maxSize/interval)];
+		String[] partitionOutput = new String[(maxSize/interval)];
     	String[] outputSize = new String[(maxSize/interval)];
     	int currentRun = 0;
     	
@@ -38,6 +39,7 @@ public class MainOperation {
     	
     	for(int s = interval ; s <= maxSize; s += interval) {
 			double bruteOpsAverage = 0.0;
+			double partitionOpsAverage = 0.0;
 			double operations = 0.0;
 			int[] list = new int[s];
 			
@@ -46,21 +48,28 @@ public class MainOperation {
 				
 				//Fill the array with random numbers ranging from minNum to maxNum
 				RandFill.RandFillArray(list, minNum, maxNum);
+
 				operations = BruteForceAlgorithm.BruteForceMedianOps(list);
-				//Add number of operations to total 
+				//Add number of operations to total
 				bruteOpsAverage += operations;
+
+				operations = PartitionAlgorithm.MedianOps(list);
+				partitionOpsAverage += operations;
 			}
 			//Average the number of operations
 			bruteOpsAverage = bruteOpsAverage / runs;
+			partitionOpsAverage = partitionOpsAverage / runs;
 
 			bruteOutput[currentRun] = df.format(bruteOpsAverage);
+			partitionOutput[currentRun] = df.format(partitionOpsAverage);
         	outputSize[currentRun] = Integer.toString(s);
         	currentRun++;
     	}
 		try (PrintWriter averageOut = new PrintWriter(filename)) {
-    		averageOut.println("Size\tAverage operations");
+    		averageOut.println("Size\tBrute Force Average operations\tPartition Average Operations");
     		for(int i = 0; i < outputSize.length; i++) {
-        		averageOut.println(outputSize[i] + "\t" + bruteOutput[i]);
+        		averageOut.println(outputSize[i] + "\t" + bruteOutput[i] + "\t" + partitionOutput[i]);
+
         	}
     	}
 
