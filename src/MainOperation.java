@@ -37,11 +37,13 @@ public class MainOperation {
     	DecimalFormat df = new DecimalFormat("0");
     	df.setMaximumFractionDigits(10);
     	
-    	for(int s = interval ; s <= maxSize; s += interval) {
+    	for(int size = interval ; size <= maxSize; size += interval) {
+    		
+    		//Initialize run specific variables
 			double bruteOpsAverage = 0.0;
 			double partitionOpsAverage = 0.0;
 			double operations = 0.0;
-			int[] list = new int[s];
+			int[] list = new int[size];
 			
 			//Run the algorithm for 'runs' amount of times with different inputs
 			for (int i = 0; i < runs; i++) {
@@ -54,15 +56,17 @@ public class MainOperation {
 				bruteOpsAverage += operations;
 
 				operations = PartitionAlgorithm.MedianOps(list);
+				//Add number of operations to total
 				partitionOpsAverage += operations;
 			}
 			//Average the number of operations
 			bruteOpsAverage = bruteOpsAverage / runs;
 			partitionOpsAverage = partitionOpsAverage / runs;
-
+			
+			//Format everything as a String for output
 			bruteOutput[currentRun] = df.format(bruteOpsAverage);
 			partitionOutput[currentRun] = df.format(partitionOpsAverage);
-        	outputSize[currentRun] = Integer.toString(s);
+        	outputSize[currentRun] = Integer.toString(size);
         	currentRun++;
     	}
 		try (PrintWriter averageOut = new PrintWriter(filename)) {
