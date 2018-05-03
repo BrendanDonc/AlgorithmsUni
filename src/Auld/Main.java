@@ -1,4 +1,4 @@
-package assignment1;
+package Auld;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
