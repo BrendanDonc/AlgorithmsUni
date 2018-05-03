@@ -112,6 +112,7 @@ public class PartitionAlgorithm {
         //Iterate over slice excluding first val
         for(int j = min + 1; j <= max; j++){
             //Check if the current val index is less that the recorded pivot point
+            op_counter++;
             if(array[j] < pivot_val){
                 pivot_loc++; //Iterate pivot loc to match movement
                 array = swapOps(array, pivot_loc, j); //dont need array equals prolly, delete this
@@ -122,7 +123,6 @@ public class PartitionAlgorithm {
     }//end Partition
 
     public static int[] swapOps(int[] array, int a, int b){
-        op_counter++;
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;
