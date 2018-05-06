@@ -90,7 +90,7 @@ public class BruteForceAlgorithmTests {
 	 * 
 	 */
 	@Test
-	public void medianAtEnd() {
+	public void testMedianAtEnd() {
 		testArray = new int[] {1,1,1,1,1,1,1,1,9,9,9,9,9,9,9,9,5};
 		assertEquals(5, BruteForceAlgorithm.BruteForceMedian(testArray));
 	}
@@ -100,7 +100,7 @@ public class BruteForceAlgorithmTests {
 	 * 
 	 */
 	@Test
-	public void medianAtStart() {
+	public void testMedianAtStart() {
 		testArray = new int[] {5,1,1,1,1,1,1,1,1,9,9,9,9,9,9,9,9};
 		assertEquals(5, BruteForceAlgorithm.BruteForceMedian(testArray));
 	}
