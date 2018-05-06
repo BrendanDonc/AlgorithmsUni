@@ -36,8 +36,6 @@ public class PartitionAlgorithm {
 
     public static int Partition(int[] array, int min, int max){
         //Record first val in array slice and position
-
-
         int pivot_val = array[min]; //Pivot point to be used
         int pivot_loc = min;
         //Iterate over slice excluding first val
@@ -49,11 +47,6 @@ public class PartitionAlgorithm {
             }
         }
         array = swap(array, min, pivot_loc);
-        System.out.println("Start");
-        for(int z = min; z < max; z++){
-            System.out.print(array[z] + " , ");
-        }
-        System.out.println("End");
 
         return pivot_loc;
     }//end Partition
@@ -112,7 +105,7 @@ public class PartitionAlgorithm {
         //Iterate over slice excluding first val
         for(int j = min + 1; j <= max; j++){
             //Check if the current val index is less that the recorded pivot point
-            op_counter++;
+            op_counter += 1;
             if(array[j] < pivot_val){
                 pivot_loc++; //Iterate pivot loc to match movement
                 array = swapOps(array, pivot_loc, j); //dont need array equals prolly, delete this

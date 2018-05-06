@@ -10,7 +10,7 @@ public class MainOperation {
 	private static int runs = 100;
 	
 	//Set max size of Array
-	private static int maxSize = 1000;
+	private static int maxSize = 5000;
 	
 	//Set interval of Array sizes for each run
 	private static int interval = 100;

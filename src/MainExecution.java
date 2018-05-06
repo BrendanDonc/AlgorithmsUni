@@ -7,19 +7,19 @@ import Assignment.*;
 public class MainExecution {
 	
 	//Set amount of runs to average
-	private static int runs = 10000;
+	private static int runs = 100;
 	
 	//Set max size of Array
-	private static int maxSize = 1000;
+	private static int maxSize = 10000;
 	
 	//Set interval of Array sizes for each run
-	private static int interval = 10;
+	private static int interval = 100;
 	
 	//Set highest possible value
-	private static int maxNum = 1000000000;
+	private static int maxNum = 10000;
 	
 	//Set lowest possible value, must be less than maxNum
-	private static int minNum = -1000000000;
+	private static int minNum = -10000;
 	
 	//Set filename of file to be created when run
 	private static String filename = "Average.xls";
@@ -53,14 +53,14 @@ public class MainExecution {
 				//Time the brute force median of the array
 				double start = System.nanoTime();
 				BruteForceAlgorithm.BruteForceMedian(list);
-				double done = (System.nanoTime() - start)/1000000000;
+				double done = (System.nanoTime() - start)/runs;
 				//Sum all the times
 				bruteAverage += done;
 				
 				//Time the partition median of the array
 				start = System.nanoTime();
 				PartitionAlgorithm.Median(list);
-				done = (System.nanoTime() - start)/1000000000;
+				done = (System.nanoTime() - start)/runs;
 				//Sum all the times
 				partitionAverage += done;
 				
