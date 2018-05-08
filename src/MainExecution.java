@@ -8,7 +8,7 @@ public class MainExecution {
 	
 	//Set amount of runs to average
 	private static int runs = 100;
-	
+
 	//Set max size of Array
 	private static int maxSize = 10000;
 	
