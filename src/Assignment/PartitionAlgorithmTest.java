@@ -127,25 +127,4 @@ public class PartitionAlgorithmTest {
             assertEquals(expected_array[i], array[i]);
         }
     }
-
-    /**
-     * Median <<<>>>
-     *     Sorted -- Evens/Odds
-     *     Unsorted -- Evens/Odds
-     *     Simple all same -- Evens/Odds
-     *     Length one
-     *
-     * Swap <<<>>>
-     *     2 Element swap
-     *
-     * Partition <<<>>>
-     *     Start from point 0
-     *     Start from point 1/2
-     *     Pivot ends at end
-     *     Pivot ends at start
-     *
-     * Select <<<>>>
-     *
-     *     pivot is median
-     */
 }
