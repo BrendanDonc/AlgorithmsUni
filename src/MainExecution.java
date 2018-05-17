@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 
 import Assignment.*;
 
+//Used to fill the execution time spreadsheet 'Average.xls'
 public class MainExecution {
 	
 	//Set amount of runs to average

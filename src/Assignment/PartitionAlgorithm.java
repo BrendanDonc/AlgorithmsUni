@@ -1,6 +1,7 @@
 package Assignment;
 
 public class PartitionAlgorithm {
+    //Using the quicksort partition method, find the median from an array of numbers
     public static int Median(int[] array){
         if(array.length == 1){
             return array[0];
@@ -50,6 +51,7 @@ public class PartitionAlgorithm {
 
 
 //-------------------------------------
+    //Record the total number of basic operations run for the 'Median' function
     public static int op_counter;
     public static int MedianOps(int[] array){
         op_counter = 0;

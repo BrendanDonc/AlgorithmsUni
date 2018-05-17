@@ -1,7 +1,7 @@
 package Assignment;
 
 public class BruteForceAlgorithm {
-
+	//Return a median from an array of numbers by iterating through every result with each possible pivot
 	public static int BruteForceMedian(int[] list) {
 		int k = (int) Math.ceil(list.length/2.0);
 		
@@ -25,7 +25,8 @@ public class BruteForceAlgorithm {
 		//in case of no median found return 0
 		return 0;
 	} //end BruteForceMedian
-	
+
+	//Return the basic operation count for the 'BruteForceMedian' function
 	public static int BruteForceMedianOps(int[] list) {
 		int k = (int) Math.ceil(list.length/2.0);
 		int ops = 0;

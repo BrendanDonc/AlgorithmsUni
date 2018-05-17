@@ -1,6 +1,5 @@
 package Assignment;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static Assignment.PartitionAlgorithm.Median;
@@ -11,12 +10,6 @@ import static Assignment.PartitionAlgorithm.swap;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PartitionAlgorithmTest {
-
-    @Before
-    public void initialize(){
-
-
-    }
 
     //Naming convention : MethodName_StateUnderTest_ExpectedBehaviour
 

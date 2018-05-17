@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 
 import Assignment.*;
 
+//Used to fill the basic operation spreadsheet 'Operations.xls'
 public class MainOperation {
 	
 	//Set amount of runs to average

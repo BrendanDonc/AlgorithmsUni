@@ -1,6 +1,7 @@
 import Assignment.*;
 import java.util.Arrays;
 
+//Hardcoded testing environment to ensure code acts as expected. Developed before unit tests were generated.
 public class main {
 
     public static void main(String[] args) {
